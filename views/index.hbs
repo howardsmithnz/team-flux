@@ -17,7 +17,7 @@
 </div>
 
 <!-- Button -->
-<div class="form-group" id="push_me">
+<div class="form-group">
   <label class="col-md-4 control-label" for="sendbutton">Send Query</label>
   <div class="col-md-4">
     <button id="sendbutton" name="sendbutton" class="btn btn-primary">Send</button>
@@ -28,9 +28,40 @@
 </form>
 
 <script>
-    $("#push_me").click(function(){
-    $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
-});
+    // $("#sendbutton").click(function(){
+    //     $.get("demo_test.asp", function(data, status){
+    //         alert("Data: " + data + "\nStatus: " + status);
+    //     });
+    // });
+
+    var form = new FormData();
+    form.append("file", "");
+
+    var queryWord = "sprain";
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=" + queryWord,
+      "method": "GET",
+      "headers": {
+        "accept": "application/json+fhir",
+        "cache-control": "no-cache",
+        "postman-token": "89b6d96d-c098-d6f8-a263-fe3385ba8882"
+      },
+      "processData": false,
+      "contentType": false,
+      "mimeType": "multipart/form-data",
+      "data": form
+      }
+
+      $("#sendbutton").click(function(){
+        // alert("Boo");
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+        });
+      });
+
+
+    
 </script>
