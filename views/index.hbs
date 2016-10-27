@@ -17,7 +17,7 @@
 </div>
 
 <!-- Button -->
-<div class="form-group">
+<div class="form-group" id="push_me">
   <label class="col-md-4 control-label" for="sendbutton">Send Query</label>
   <div class="col-md-4">
     <button id="sendbutton" name="sendbutton" class="btn btn-primary">Send</button>
@@ -26,3 +26,11 @@
 
 </fieldset>
 </form>
+
+<script>
+    $("#push_me").click(function(){
+    $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});
+</script>
