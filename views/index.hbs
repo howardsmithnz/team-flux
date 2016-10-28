@@ -4,11 +4,355 @@
   <img src="images/welding_combined.jpg" id="banner"/>
 </div>
 
+<h2>ED Ankle Assessment Form</h2>
+
 <form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend>ED EMR</legend>
+
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Reason for visit</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Why are you here?" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Site</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Affected area" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Problem type</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+      Trauma
+    </label>
+    </div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      Non-trauma
+    </label>
+    </div>
+  <div class="radio">
+    <label for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="3">
+      Unknown
+    </label>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Onset</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="How did it occur?" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Date of injury</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Date of injury" class="form-control input-md">
+ 
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Pain severity</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="0" checked="checked">
+      0
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="1">
+      1
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" name="radios" id="radios-2" value="2">
+      2
+    </label> 
+    <label class="radio-inline" for="radios-3">
+      <input type="radio" name="radios" id="radios-3" value="3">
+      3
+    </label> 
+    <label class="radio-inline" for="radios-4">
+      <input type="radio" name="radios" id="radios-4" value="4">
+      4
+    </label> 
+    <label class="radio-inline" for="radios-5">
+      <input type="radio" name="radios" id="radios-5" value="5">
+      5
+    </label> 
+    <label class="radio-inline" for="radios-6">
+      <input type="radio" name="radios" id="radios-6" value="6">
+      6
+    </label> 
+    <label class="radio-inline" for="radios-7">
+      <input type="radio" name="radios" id="radios-7" value="7">
+      7
+    </label> 
+    <label class="radio-inline" for="radios-8">
+      <input type="radio" name="radios" id="radios-8" value="8">
+      8
+    </label> 
+    <label class="radio-inline" for="radios-9">
+      <input type="radio" name="radios" id="radios-9" value="9">
+      9
+    </label>
+    <label class="radio-inline" for="radios-9">
+      <input type="radio" name="radios" id="radios-10" value="10">
+      10
+    </label>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Analgesia</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+      Yes
+    </label>
+    </div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      No
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Analgesia type</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="Analgesia type" class="form-control input-md"> 
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">Side</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      Left
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      Right
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">Part of ankle</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      Lateral
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      Medial
+    </label>
+    </div>
+   <div class="checkbox">
+   <label for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="1">
+      NOS ankle and/or foot
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="2">
+      Deltoid ligament
+    </label>
+    </div>
+     <div class="checkbox">
+    <label for="checkboxes-4">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="2">
+      Lateral ligament
+    </label>
+    </div>
+  
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Investigations/Procedures</label>  
+
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">Investigations</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      X-ray
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      Ultrasound
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      CT
+    </label>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">Procedures</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      Nerve block
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      Acupuncture
+    </label>
+    </div>
+  </div>
+</div>
+
+
+<!-- Multiple Checkboxes -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="checkboxes">Type of injury</label>
+  <div class="col-md-4">
+  <div class="checkbox">
+    <label for="checkboxes-0">
+      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+      Sprain
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-1">
+      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+      Fracture
+    </label>
+    </div>
+   <div class="checkbox">
+   <label for="checkboxes-2">
+      <input type="checkbox" name="checkboxes" id="checkboxes-2" value="1">
+      Contusion
+    </label>
+    </div>
+  <div class="checkbox">
+    <label for="checkboxes-3">
+      <input type="checkbox" name="checkboxes" id="checkboxes-3" value="2">
+      Laceration
+    </label>
+    </div>
+
+  
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">Severity</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="radios-0">
+      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+      Grade I
+    </label>
+    </div>
+  <div class="radio">
+    <label for="radios-1">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      Grade II
+    </label>
+    </div>
+    
+   <div class="radio">
+    <label for="radios-2">
+      <input type="radio" name="radios" id="radios-1" value="2">
+      Grade III
+    </label>
+    </div>
+   
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Primary Assessment</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
+ 
+  </div>
+</div>
+
+
+<!-- Select Basic -->
+<div class="form-group">
+
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Sprain of ankle</option>
+      <option value="2">Sprain, ankle joint, lateral</option>
+      <option value="3">Sprain, ankle joint, medial</option>
+      <option value="4">Sprain of ankle grade I</option>
+      <option value="5">Sprain of ankle grade II</option> 
+      <option value="5">Sprain of ankle grade III</option>
+      <option value="5">Sprain of ankle and/or foot</option>
+      <option value="5">Sprain of deltoid ligament of ankle</option>   
+       <option value="5">Sprain of lateral ligament of ankle</option>                        
+    </select>
+  </div>
+</div>
 
 <!-- Text input-->
 <div class="form-group">
@@ -33,7 +377,7 @@
 <script>
     $("#push_me").click(function(){
     $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+        alert("Data: " + data + "\nStatus: " + status); return false;
     });
 });
 </script>
