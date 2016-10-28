@@ -6,7 +6,7 @@
 
 <h2>ED Ankle Assessment Form</h2>
 
-<form class="form-horizontal">
+<form onsubmit="return false;" class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
@@ -375,7 +375,9 @@
 </form>
 
 <script>
+    console.log("Hello");
     $("#push_me").click(function(){
+      console.log("Button pressed");
     $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
         alert("Data: " + data + "\nStatus: " + status); return false;
     });
