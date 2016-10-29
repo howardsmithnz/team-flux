@@ -1,19 +1,27 @@
-<h1>{{title}}</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
 
-<div id="bannerDiv">
-  <img src="images/welding_combined.jpg" id="banner"/>
-</div>
+  <body>
+    <div class="container">
 
-<h2>ED Ankle Assessment Form</h2>
+<h1>Flux SNODing Demo</h1>
+<p>ED Ankle Assessment Form</p>
 
-<form onsubmit="return false;" class="form-horizontal">
+<form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
 <legend>ED EMR</legend>
-
-<form class="form-horizontal">
-<fieldset>
 
 <!-- Text input-->
 <div class="form-group">
@@ -355,70 +363,13 @@
 </div>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Query Text</label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="enter your text here" class="form-control input-md" required="">
-    
-  </div>
-</div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="sendbutton">Send Query</label>
-  <div class="col-md-4">
-    <button id="sendbutton" name="sendbutton" class="btn btn-primary">Send</button>
-  </div>
-</div>
+
+
 
 </fieldset>
 </form>
 
-<script>
-<<<<<<< HEAD
-    // $("#sendbutton").click(function(){
-    //     $.get("demo_test.asp", function(data, status){
-    //         alert("Data: " + data + "\nStatus: " + status);
-    //     });
-    // });
-
-    var form = new FormData();
-    form.append("file", "");
-
-    var queryWord = "sprain";
-
-    var settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=" + queryWord,
-      "method": "GET",
-      "headers": {
-        "accept": "application/json+fhir",
-        "cache-control": "no-cache",
-        "postman-token": "89b6d96d-c098-d6f8-a263-fe3385ba8882"
-      },
-      "processData": false,
-      "contentType": false,
-      "mimeType": "multipart/form-data",
-      "data": form
-      }
-
-      $("#sendbutton").click(function(){
-        // alert("Boo");
-        $.ajax(settings).done(function (response) {
-          console.log(response);
-        });
-      });
-
-
-    
-=======
-    console.log("Hello");
-    $("#push_me").click(function(){
-      console.log("Button pressed");
-    $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
-        alert("Data: " + data + "\nStatus: " + status); return false;
-    });
-});
->>>>>>> 818e8b4907a9d858066914bd643ba60c8e318104
-</script>
+    </div>
+  </body>
+</html>
