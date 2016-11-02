@@ -367,6 +367,10 @@
     </div>
   </div>
 
+  <div id="resultPane">
+    Nothing
+  </div>
+
   </fieldset>
 </form>
 
@@ -429,23 +433,19 @@
   $(document).ready(function() {
     console.log("Hello, DOM ready");
 
-    var myInput = "almond";
-    console.log("first myInput is " + myInput)
-
     $("#sendbutton").click(function(){
       console.log("sendbutton pressed");
 
-      myInput = $("#mytextinput").val() || "default value";
-      console.log("then myInput is " + myInput)
+      var searchQuery = $("#mytextinput").val() || "default value";
+      console.log("searchQuery is " + searchQuery)
 
       var form = new FormData();
       form.append("file", "");
-
       
       var settings = {
         "async": true,
       	"crossDomain": true,
-      	"url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=sprain",
+      	"url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=" + searchQuery,
       	"method": "GET",
       	"headers": {
         		   "accept": "application/json+fhir",
@@ -460,6 +460,11 @@
 
       $.ajax(settings).done(function (response) {
      		console.log(response);
+        var respObj = JSON.parse(response);
+        var displayMeObj = respObj["expansion"]["contains"][0]["display"];
+        var displayText = displayMeObj.toString();
+        console.log("type of displayText is : ", (typeof displayText))
+        $("#resultPane").html(displayText || "Oops!");
       });
     });
   });
