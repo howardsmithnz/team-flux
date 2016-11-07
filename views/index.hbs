@@ -365,7 +365,7 @@
   $(document).ready(function() {
     console.log("Hello, DOM ready");
 
-    $("#mytextinput").on('change', function() {
+    $("#mytextinput").on('keyup', function() {
       console.log("mytextinput changed");
 
       var searchQuery = $("#mytextinput").val();
