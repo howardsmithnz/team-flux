@@ -274,13 +274,13 @@
       </div>
       <div class="checkbox">
         <label for="injuryTypeCheckboxes-2">
-          <input type="checkbox" name="injuryTypeCheckboxes" id="injuryTypeCheckboxes-2" value="1">
+          <input type="checkbox" name="injuryTypeCheckboxes" id="injuryTypeCheckboxes-2" value="3">
         Contusion
         </label>
       </div>
       <div class="checkbox">
         <label for="injuryTypeCheckboxes-3">
-          <input type="checkbox" name="injuryTypeCheckboxes" id="injuryTypeCheckboxes-3" value="2">
+          <input type="checkbox" name="injuryTypeCheckboxes" id="injuryTypeCheckboxes-3" value="4">
         Laceration
         </label>
       </div>
@@ -322,7 +322,7 @@
 
   <!-- Select Basic -->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="selectbasic">Primary Assessment - select</label>
+    <label class="col-md-4 control-label" for="selectbasic">Primary Assessment - please select</label>
     <div class="col-md-8">
       <select id="selectbasic" name="selectbasic" class="form-control">
         <option value="1">Sprain of ankle</option>
@@ -365,10 +365,10 @@
   $(document).ready(function() {
     console.log("Hello, DOM ready");
 
-    $("#sendbutton").click(function(){
-      console.log("sendbutton pressed");
+    $("#mytextinput").on('change', function() {
+      console.log("mytextinput changed");
 
-      var searchQuery = $("#mytextinput").val() || "default value";
+      var searchQuery = $("#mytextinput").val();
       console.log("searchQuery is " + searchQuery)
 
       var form = new FormData();
@@ -390,15 +390,17 @@
       	"data": form
       }
 
-      $.ajax(settings)
-        .done(function (response) {
-       		console.log(response);
-          var respObj = JSON.parse(response);
-          var displayMeObj = respObj["expansion"]["contains"][0]["display"];
-          var displayText = displayMeObj.toString();
-          console.log("type of displayText is : ", (typeof displayText))
-          $("#resultPane").html(displayText || "Oops!");
-        });
+      if(searchQuery.length >= 3) {
+        $.ajax(settings)
+          .done(function (response) {
+         		console.log(response);
+            var respObj = JSON.parse(response);
+            var displayMeObj = respObj["expansion"]["contains"][0]["display"];
+            var displayText = displayMeObj.toString();
+            console.log("type of displayText is : ", (typeof displayText))
+            $("#resultPane").html(displayText || "Oops!");
+          });
+      };
     });
   });
 </script>
