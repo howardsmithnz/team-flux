@@ -375,61 +375,6 @@
 </form>
 
 <script>
-    // $("#sendbutton").click(function(){
-    //     $.get("demo_test.asp", function(data, status){
-    //         alert("Data: " + data + "\nStatus: " + status);
-    //     });
-    // });
-
-    // var form = new FormData();
-    // form.append("file", "");
-
-    // var queryWord = "sprain";
-
-    // var settings = {
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=" + queryWord,
-    //   "method": "GET",
-    //   "headers": {
-    //     "accept": "application/json+fhir",
-    //     "cache-control": "no-cache",
-     // var form = new FormData();
-    // form.append("file", "");
-
-    // var queryWord = "sprain";
-
-    // var settings = {
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "http://ontoserver.csiro.au/fhir/ValueSet/$expand?identifier=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F428776005&count=10&filter=" + queryWord,
-    //   "method": "GET",
-    //   "headers": {
-    //     "accept": "application/json+fhir",
-    //       "postman-token": "89b6d96d-c098-d6f8-a263-fe3385ba8882"
-      // },
-      // "processData": false,
-      // "contentType": false,
-      // "mimeType": "multipart/form-data",
-      // "data": form
-      // }
-
-      // $("#sendbutton").click(function(){
-      //   // alert("Boo");
-      //   $.ajax(settings).done(function (response) {
-      //     console.log(response);
-      //   });
-      // });
-
-
-    
-//     console.log("Hello");
-//     $("#push_me").click(function(){
-//       console.log("Button pressed");
-//     $.get("http://snomed.info/sct&code=263495000&_format=json", function(data, status){
-//         alert("Data: " + data + "\nStatus: " + status); return false;
-//     });
-// });
   $(document).ready(function() {
     console.log("Hello, DOM ready");
 
@@ -458,15 +403,15 @@
       	"data": form
       }
 
-      $.ajax(settings).done(function (response) {
-     		console.log(response);
-        var respObj = JSON.parse(response);
-        var displayMeObj = respObj["expansion"]["contains"][0]["display"];
-        var displayText = displayMeObj.toString();
-        console.log("type of displayText is : ", (typeof displayText))
-        $("#resultPane").html(displayText || "Oops!");
-      });
+      $.ajax(settings)
+        .done(function (response) {
+       		console.log(response);
+          var respObj = JSON.parse(response);
+          var displayMeObj = respObj["expansion"]["contains"][0]["display"];
+          var displayText = displayMeObj.toString();
+          console.log("type of displayText is : ", (typeof displayText))
+          $("#resultPane").html(displayText || "Oops!");
+        });
     });
   });
-
 </script>
