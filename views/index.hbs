@@ -373,7 +373,11 @@
 
       var form = new FormData();
       form.append("file", "");
-      
+      // console.log("form keys is: " + form.keys())
+      // for (var key of form.keys()) {
+      // console.log(key); 
+      // }
+
       var settings = {
         "async": true,
       	"crossDomain": true,
@@ -395,8 +399,14 @@
           .done(function (response) {
          		console.log(response);
             var respObj = JSON.parse(response);
-            var displayMeObj = respObj["expansion"]["contains"][0]["display"];
-            var displayText = displayMeObj.toString();
+            var displayText = '<select name="queryResult">';
+            var max = respObj["expansion"]["contains"].length;
+            for(var i=0; i < max; i++) {
+              var retrStr = respObj["expansion"]["contains"][i]["display"].toString()
+              console.log("retrStr is: " + retrStr)
+              displayText = displayText + "<option value=\"" + retrStr + "\">" + retrStr + "</option>";
+            }
+            displayText = displayText + "</select>"
             console.log("type of displayText is : ", (typeof displayText))
             $("#resultPane").html(displayText || "Oops!");
           });
