@@ -321,7 +321,7 @@
   </div>
 
   <!-- Select Basic -->
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label class="col-md-4 control-label" for="selectbasic">Primary Assessment - please select</label>
     <div class="col-md-8">
       <select id="selectbasic" name="selectbasic" class="form-control">
@@ -336,7 +336,7 @@
         <option value="9">Sprain of lateral ligament of ankle</option>                        
       </select>
     </div>
-  </div>
+  </div> -->
 
   <!-- Text input-->
   <div class="form-group">
@@ -346,16 +346,19 @@
     </div>
   </div>
 
-  <!-- Button -->
   <div class="form-group">
-    <label class="col-md-4 control-label" for="sendbutton">Send Query</label>
-    <div class="col-md-8">
-      <button id="sendbutton" name="sendbutton" class="btn btn-primary">Send</button>
+    <label class="col-md-4 control-label" for="queryResult">Query Result</label>
+    <div id="resultPane" class="col-md-8">
+      Nothing
     </div>
   </div>
 
-  <div id="resultPane">
-    Nothing
+    <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="sendbutton">Submit Diagnosis</label>
+    <div class="col-md-8">
+      <button id="sendbutton" name="sendbutton" class="btn btn-primary">Submit</button>
+    </div>
   </div>
 
   </fieldset>
@@ -399,7 +402,7 @@
           .done(function (response) {
          		console.log(response);
             var respObj = JSON.parse(response);
-            var displayText = '<select name="queryResult">';
+            var displayText = '<select name="queryResult" class="form-control">';
             var max = respObj["expansion"]["contains"].length;
             for(var i=0; i < max; i++) {
               var retrStr = respObj["expansion"]["contains"][i]["display"].toString()
