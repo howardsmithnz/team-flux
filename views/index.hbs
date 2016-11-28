@@ -320,7 +320,7 @@
     </div>
   </div>
 
-  <!-- Select Basic -->
+  <!-- Select Basic - for testing -->
   <!-- <div class="form-group">
     <label class="col-md-4 control-label" for="selectbasic">Primary Assessment - please select</label>
     <div class="col-md-8">
@@ -376,10 +376,6 @@
 
       var form = new FormData();
       form.append("file", "");
-      // console.log("form keys is: " + form.keys())
-      // for (var key of form.keys()) {
-      // console.log(key); 
-      // }
 
       var settings = {
         "async": true,
@@ -411,9 +407,13 @@
             }
             displayText = displayText + "</select>"
             console.log("type of displayText is : ", (typeof displayText))
-            $("#resultPane").html(displayText || "Oops!");
+            $("#resultPane").html(displayText || "Oops! I couldn't find the Ontoserver.");
           });
       };
+    });
+
+    $('#sendbutton').on('click', function() {
+      alert('Data submitted');
     });
   });
 </script>
