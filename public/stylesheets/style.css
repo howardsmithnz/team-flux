@@ -2,6 +2,7 @@ body {
   padding: 50px;
   font-family: 'ABeeZee', sans-serif;
   font-size: 14px;
+  background-color: lightblue;
 }
 
 a {
@@ -18,4 +19,11 @@ a {
 
 .control-label {
     color: #475983;
+}
+
+.form-group {
+    background-color: #e6eeff;
+    border-radius: 5px;
+    /*box-shadow: 3px 3px 2px #AAAAAA;*/
+    padding: 5px;
 }
